@@ -135,11 +135,17 @@ while keyboard.is_pressed('q') == False:
   yPosHead_left = headBust_left.locate_block()[1]
 
   print(xPosHead_left, xPosHead_right, xPosBlock)
+#_________________________________________________________
+#stop if nothing is visable
+  if xPosHead_right == 0 and xPosHead_left == 0 and xPosBlock == 0: 
+       print(xPosHead_left, xPosHead_right, xPosBlock)
+       print("Can't locate image on screen")
+       time.sleep(3)
 
 
 #_________________________________________________________
     #base case if hit x-wall x_max
-  if xPosHead_right >= 1760:
+  elif xPosHead_right >= 1760:
      breaker == 0 
      print('Xx')
      left(0.244 + rand())
